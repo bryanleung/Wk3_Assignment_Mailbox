@@ -13,6 +13,7 @@
 		D72D873D1A9896CC003AE0AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72D873C1A9896CC003AE0AC /* Images.xcassets */; };
 		D72D87401A9896CC003AE0AC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72D873E1A9896CC003AE0AC /* LaunchScreen.xib */; };
 		D72D874C1A9896CC003AE0AC /* Wk3_Assignment_MailboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72D874B1A9896CC003AE0AC /* Wk3_Assignment_MailboxTests.swift */; };
+		D72D87561A989A10003AE0AC /* mailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72D87551A989A0F003AE0AC /* mailboxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		D72D87451A9896CC003AE0AC /* Wk3_Assignment_MailboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Wk3_Assignment_MailboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72D874A1A9896CC003AE0AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D72D874B1A9896CC003AE0AC /* Wk3_Assignment_MailboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wk3_Assignment_MailboxTests.swift; sourceTree = "<group>"; };
+		D72D87551A989A0F003AE0AC /* mailboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mailboxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				D72D873C1A9896CC003AE0AC /* Images.xcassets */,
 				D72D873E1A9896CC003AE0AC /* LaunchScreen.xib */,
 				D72D87331A9896CC003AE0AC /* Supporting Files */,
+				D72D87551A989A0F003AE0AC /* mailboxViewController.swift */,
 			);
 			path = Wk3_Assignment_Mailbox;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72D87381A9896CC003AE0AC /* ViewController.swift in Sources */,
+				D72D87561A989A10003AE0AC /* mailboxViewController.swift in Sources */,
 				D72D87361A9896CC003AE0AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Wk3_Assignment_Mailbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Wk3_Assignment_Mailbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
