@@ -18,6 +18,7 @@ class mailboxViewController: UIViewController {
     @IBOutlet weak var messageContainer: UIView!
     @IBOutlet weak var rescheduleView: UIView!
     @IBOutlet weak var listView: UIView!
+    @IBOutlet weak var mainView: UIView!
     
     
     var iconList = UIImage(named: "list_icon")
@@ -33,8 +34,9 @@ class mailboxViewController: UIViewController {
 
     var originalListFeedCenter: CGPoint!
     var originalmessageContainerCenter: CGPoint!
+    var originalmainViewCenter: CGPoint!
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,7 @@ class mailboxViewController: UIViewController {
         singleMessage.userInteractionEnabled = true
         originalmessageContainerCenter = messageContainer.center
         originalListFeedCenter = listFeed.center
+        originalmainViewCenter = mainView.center
 
         
         rescheduleView.alpha = 0
@@ -50,6 +53,10 @@ class mailboxViewController: UIViewController {
         listView.alpha = 0
         listView.hidden = true
         
+        
+        var edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onEdgePan:")
+        edgeGesture.edges = UIRectEdge.Left
+        mainView.addGestureRecognizer(edgeGesture)
         
         // Do any additional setup after loading the view.
     }
@@ -135,6 +142,34 @@ class mailboxViewController: UIViewController {
         }
     }
     
+    @IBAction func onEdgePan(sender: UIScreenEdgePanGestureRecognizer) {
+        var translation = sender.translationInView(view)
+        
+        if (sender.state == UIGestureRecognizerState.Began){
+            
+            
+            
+        } else if (sender.state == UIGestureRecognizerState.Changed) {
+            mainView.center.x = originalmainViewCenter.x + translation.x
+            println(mainView.center.x)
+            
+        } else if (sender.state == UIGestureRecognizerState.Ended) {
+            
+            if(mainView.center.x > 260){
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.mainView.center.x = 500
+                })
+            }
+            else {
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.mainView.center.x = self.originalmainViewCenter.x
+                })
+            }
+            
+        }
+    }
+    
+    
     func resetLeftRightIcons(){
         rightIcon.center.x = 290
         rightIcon.image = iconLater
@@ -173,6 +208,18 @@ class mailboxViewController: UIViewController {
         
     }
     
+    @IBAction func didPressMenuButton(sender: AnyObject) {
+        if(mainView.center.x < 260){
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.mainView.center.x = 500
+            })
+        }
+        else {
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.mainView.center.x = self.originalmainViewCenter.x
+            })
+        }
+    }
     
     
 
