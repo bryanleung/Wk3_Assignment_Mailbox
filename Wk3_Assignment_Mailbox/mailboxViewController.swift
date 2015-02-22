@@ -221,6 +221,27 @@ class mailboxViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.becomeFirstResponder()
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if(event.subtype == UIEventSubtype.MotionShake) {
+            var alert = UIAlertController(title: "Mailbox Reset",
+                message: "Mailbox demo has been reset.",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK",
+                style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+            resetMessagePosition()
+        }
+    }
+    
     
 
 }
